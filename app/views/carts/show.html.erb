@@ -5,9 +5,9 @@
   </header>
 
 <% if enhanced_cart.size == 0  %>
-       <div class="alert alert-info" role="alert">
-  <p>Your shopping cart is empty! Start shopping <%= link_to 'here', :back %></p>
-</div>
+  <div class="alert alert-info" role="alert">
+    <p>Your shopping cart is empty! Start shopping <%= link_to 'here', :back %></p>
+  </div>
     <% else %>
   <div class="panel panel-default items">
     <table class="table table-bordered">

@@ -4,6 +4,11 @@
     <h1>My Cart</h1>
   </header>
 
+<% if enhanced_cart.size == 0  %>
+       <div class="alert alert-info" role="alert">
+  <p>Your shopping cart is empty! Start shopping <%= link_to 'here', :back %></p>
+</div>
+    <% else %>
   <div class="panel panel-default items">
     <table class="table table-bordered">
       <thead>
@@ -42,11 +47,12 @@
           data-name="Jungle"
           data-description="Khurram Virani's Jungle Order"
           data-locale="auto"
-          data-email="kvirani@gmail.com"
+          data-email="hildamatilda@"
           data-currency="cad">
         </script>
       <% end %>
     </div>
   </div>
 
+  <% end %>
 </section>

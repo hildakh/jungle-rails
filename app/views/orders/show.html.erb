@@ -6,8 +6,39 @@
 
   <div class="order-summary jumbotron">
     <h4>Thank you for your order!</h4>
+    <h5>
+    <%= @order.id %>
+     </h5>
+    <h5>
+    <%= @order.total_cents %>
+      </h5>
+    <h5>
+    <%= @order.email %>
+    </h5>
+    
+
+    <%= @line_item.each do |item| %>
+      <% @productid= item.product_id %>
+      <% @product= @products.find(@productid)%>
+      
+    <h5>
+    -----------------------
+      <%= @product[:name] %>
+      </h5>
+       <%# <img src=<%= @product[:image] /> %>
+         <div class="col-sm-4">
+       <%= image_tag @product.image.thumb, class: 'main-img' %>
+        </div>
+      
+
+    <h5>
+    <%= item.product_id %>
+    </h5>
+    -------------------------
+    <% end %>
   </div>
 
   <%= link_to "Continue Shopping", root_path, class: 'btn btn-lg btn-primary' %>
 
 </section>
+

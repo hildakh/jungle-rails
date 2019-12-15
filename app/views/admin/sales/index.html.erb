@@ -18,12 +18,13 @@
           <th>End Date</th>
           <th>Status</th>
           <th>Percent Off</th>
-          <th></th>
+         
         </tr>
       </thead>
       <tbody>
         <%# <%= render @sales %>
         <% @sales.each do |s| %>
+        <%# By using sale: we assign each sale to a variable called sale in order to use it in index %>
         <%= render 'sale', sale: s %>
         <% end %>
       </tbody>

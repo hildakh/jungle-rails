@@ -1,61 +1,52 @@
-
-
-
-
-
-
-
-
-
-
 <div class="span6">
 <%= form_for :user, url: '/users' do |f| %>
   <div class="area">
     <form class="form-horizontal">
       <div class="heading">
-        <h4 class="form-heading">Sign Up</h4>
+        <h3 class="form-heading">Sign Up</h3>
       </div>
       <div class="control-group">
         <label class="control-label" for="inputFirst">First
           Name </label>
           
         <div class="controls">
-          <input id="inputFirst" placeholder=
-                                "E.g. Ashwin" type="text">
+        <%= f.text_field :first_name, class: 'radius input-lg', placeholder: "E.g. Ashwin" %>
         </div>
       </div>
+
       <div class="control-group">
         <label class="control-label" for="inputLast">Last
           Name</label>
         <div class="controls">
-          <input id="inputLast" placeholder="E.g. Hegde"
-                                type="text">
+        <%= f.text_field :first_name, class: 'radius input-lg', placeholder: "E.g. Hegde" %>
         </div>
       </div>
+
       <div class="control-group">
         <label class="control-label" for=
                             "inputEmail">Email</label>
         <div class="controls">
-          <input id="inputEmail" placeholder=
-                                "E.g. ashwinh@cybage.com" type="text">
+          <%= f.text_field :email, class: 'radius input-lg', placeholder: "E.g. ashwinh@cybage.com" %>
         </div>
       </div>
+
       <div class="control-group">
         <label class="control-label" for=
                             "inputUser">Password</label>
         <div class="controls">
-          <input id="inputUser" placeholder=
-                                "E.g. ashwinhegde" type="text">
+         <%= f.password_field :password, class: 'radius input-lg' %>
         </div>
       </div>
+
       <div class="control-group">
         <label class="control-label" for=
                             "inputPassword">Password Confirmation</label>
         <div class="controls">
-          <input id="inputPassword" placeholder=
-                                "Min. 8 Characters" type="password">
+          <%= f.password_field :password_confirmation, class: 'radius input-lg' %>
         </div>
+        <div>
   <%= f.submit "Sign up", class: 'btn btn-primary' %>
+  </div>
       </div>
     </form>
   </div>

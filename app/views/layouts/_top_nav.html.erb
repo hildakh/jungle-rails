@@ -41,8 +41,6 @@
             <li><%= link_to 'Categories',  [:admin, :categories] %></li>
             <li><%= link_to 'Products',  [:admin, :products] %></li>
             <li><%= link_to 'Sales',  [:admin, :sales] %></li>
-
-
           </ul>
         </li>
         <li>
@@ -50,7 +48,22 @@
             <%= fa_icon "shopping-cart" %> My Cart (<%= cart.size %>)
           <% end %>
         </li>
+        <% if current_user %>
+        <li style="margin-top: 15px;"> Logged in as <%= current_user.first_name %>
+        </li>
+        <li>
+        <%= link_to 'Logout', [:logout]%>
+        </li>
+        
+      <% else %>
+        <li>
+        <%= link_to 'Login', [:login] %>
+        </li>
+      <li>
+        <%= link_to 'Sign up', [:signup] %>
+        </li>
       </ul>
     </div>
+        <% end %>
   </div>
 </nav>

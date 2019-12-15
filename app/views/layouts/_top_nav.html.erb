@@ -49,7 +49,7 @@
           <% end %>
         </li>
         <% if current_user %>
-        <li style="margin-top: 15px;"> Logged in as <%= current_user.first_name %>
+        <li><a> Logged in as <%= current_user.first_name %></a>
         </li>
         <li>
         <%= link_to 'Logout', [:logout]%>

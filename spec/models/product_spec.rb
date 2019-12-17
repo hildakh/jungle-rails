@@ -12,15 +12,17 @@ RSpec.describe Product, type: :model do
       expect(product.errors.full_messages).to include("Name can't be blank")
     end
 
-    # it 'is not valid without a price' do
-    #   product = Product.create(category: @category, quantity: @quantity, name: @name)
-    #   expect(product.errors.full_messages).to include("Price is not a number")
-    # end
+    it 'is not valid without a price' do
+      category = Category.create(name: 'Whatever')
+      product = Product.create(category: category, quantity: 54, name: 'Stickers')
+      expect(product.errors.full_messages).to include("Price is not a number")
+    end
 
-    # it 'is not valid without a quantity' do
-    #   product = Product.create(category: @category, price: @price, name: @name)
-    #   expect(product.errors.full_messages).to include("Quantity can't be blank")
-    # end
+    it 'is not valid without a quantity' do
+      category = Category.create(name: 'Whatever')
+      product = Product.create(category: category, price: 76, name: 'Stickers')
+      expect(product.errors.full_messages).to include("Quantity can't be blank")
+    end
 
     # it 'is not valid without a category' do
     #   product = Product.create(name: @name, price: @price, quantity: @quantity)

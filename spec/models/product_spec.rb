@@ -24,10 +24,10 @@ RSpec.describe Product, type: :model do
       expect(product.errors.full_messages).to include("Quantity can't be blank")
     end
 
-    # it 'is not valid without a category' do
-    #   product = Product.create(name: @name, price: @price, quantity: @quantity)
-    #   expect(product.errors.full_messages).to include("Category can't be blank")
-    # end
+    it 'is not valid without a category' do
+      product = Product.create(name: 'Stickers', price: 36, quantity: 42)
+      expect(product.errors.full_messages).to include("Category can't be blank")
+    end
 
     it 'should save the product if all four fields are set' do
       category = Category.create(name: 'Whatever')

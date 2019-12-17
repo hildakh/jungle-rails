@@ -99,7 +99,15 @@ RSpec.describe User, type: :model do
       expect(User.authenticate_with_credentials('johnny@msn.com', '987654')).to be_nil
     end
 
-    # it 'is not valid with an invalid password' do
-    # end
+    it 'is not valid with an invalid password' do
+    user = User.create(
+      first_name: 'Jean',
+      last_name: 'Reno',
+      email: 'johnnyreno@msn.com',
+      password: '987654',
+      password_confirmation: '987654'
+    )
+    expect(User.authenticate_with_credentials('johnnyreno@msn.com', '123456')).to be_nil
+    end
   end
 end 

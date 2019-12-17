@@ -1,6 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
+
   describe 'Validations' do
 
     it 'is not valid when password and password confirmation fields inputs do not match' do
@@ -84,4 +85,21 @@ RSpec.describe User, type: :model do
       expect(user).to_not be_valid
     end
   end
-end
+
+  describe '.authenticate_with_credentials' do
+
+    it 'is not valid with an invalid email' do
+      user = User.create(
+        first_name: 'Jean',
+        last_name: 'Reno',
+        email: 'johnnyreno@msn.com',
+        password: '987654',
+        password_confirmation: '987654'
+      )
+      expect(User.authenticate_with_credentials('johnny@msn.com', '987654')).to be_nil
+    end
+
+    # it 'is not valid with an invalid password' do
+    # end
+  end
+end 

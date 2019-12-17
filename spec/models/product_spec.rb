@@ -29,7 +29,6 @@ RSpec.describe Product, type: :model do
     it 'should save the product if all four fields are set' do
       category = Category.create(name: 'Whatever')
       product = Product.create(name: 'Bean Bag Chair', price: 120, quantity: 10, category: category)
-      product.save!
       expect(product).to be_valid
     end
 

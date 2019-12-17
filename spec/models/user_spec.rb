@@ -73,5 +73,15 @@ RSpec.describe User, type: :model do
       expect(user).to_not be_valid
     end
 
+    it 'is not valid with a password shorter than 6 characters' do
+      user = User.create( 
+        first_name: 'Hogwarts',
+        last_name: 'Express',  
+        email: 'hogexpress@msn.com',
+        password: '123', 
+        password_confirmation: '123'
+      )
+      expect(user).to_not be_valid
+    end
   end
 end

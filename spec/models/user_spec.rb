@@ -1,9 +1,12 @@
 require 'rails_helper'
 
-RSpec.describe Product, type: :model do
-  describe 'Validations' do
-    
-    it 'is not valid without a name' do
+RSpec.describe User, type: :model do
+  describe 'Validations'
+end
+
+
+
+      it 'is not valid without a name' do
       category = Category.create(name: 'Whatever')
       product = Product.create(category: category, price: 20, quantity: 190)
       expect(product.errors.full_messages).to include("Name can't be blank")

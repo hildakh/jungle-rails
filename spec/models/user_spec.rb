@@ -53,5 +53,15 @@ RSpec.describe User, type: :model do
       expect(user).to_not be_valid
     end
 
+    it 'is not valid without a last name' do
+      user = User.create( 
+        first_name: 'Nagehan', 
+        email: 'nagehanozhim@yahoo.com', 
+        password: 'burasiturkiye', 
+        password_confirmation: 'burasiturkiye'
+      )
+      expect(user).to_not be_valid
+    end
+
   end
 end

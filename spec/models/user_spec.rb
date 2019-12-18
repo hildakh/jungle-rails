@@ -109,5 +109,16 @@ RSpec.describe User, type: :model do
     )
     expect(User.authenticate_with_credentials('johnnyreno@msn.com', '123456')).to be_nil
     end
+
+    it 'is valid with correct email and pass even if there are spaces before and after the email' do
+      user = User.create(
+        first_name: 'Jean',
+        last_name: 'Reno',
+        email: 'johnnyreno@msn.com',
+        password: '987654',
+        password_confirmation: '987654'
+      )
+      expect(User.authenticate_with_credentials('johnnyreno@msn.com   ', '987654')).to_not be_nil
+      end
   end
 end 

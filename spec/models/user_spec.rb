@@ -87,38 +87,32 @@ RSpec.describe User, type: :model do
   end
 
   describe '.authenticate_with_credentials' do
-
-    it 'is not valid with an invalid email' do
-      user = User.create(
-        first_name: 'Jean',
-        last_name: 'Reno',
-        email: 'johnnyreno@msn.com',
-        password: '987654',
-        password_confirmation: '987654'
-      )
-      expect(User.authenticate_with_credentials('johnny@msn.com', '987654')).to be_nil
-    end
-
-    it 'is not valid with an invalid password' do
-    user = User.create(
+    #using ! forces the user instance to be created so that it is available for the tests
+    #otherwise, we would have to check for the validity of the user => expect(user).to be_valid
+    #before checking the function
+    let!(:user) { User.create(
       first_name: 'Jean',
       last_name: 'Reno',
       email: 'johnnyreno@msn.com',
       password: '987654',
       password_confirmation: '987654'
-    )
+    )}
+
+    it 'is not valid with an invalid email' do
+      expect(User.authenticate_with_credentials('johnny@msn.com', '987654')).to be_nil
+    end
+
+    it 'is not valid with an invalid password' do
     expect(User.authenticate_with_credentials('johnnyreno@msn.com', '123456')).to be_nil
     end
 
     it 'is valid with correct email and pass even if there are spaces before and after the email' do
-      user = User.create(
-        first_name: 'Jean',
-        last_name: 'Reno',
-        email: 'johnnyreno@msn.com',
-        password: '987654',
-        password_confirmation: '987654'
-      )
       expect(User.authenticate_with_credentials('johnnyreno@msn.com   ', '987654')).to_not be_nil
-      end
+    end
+
+    it 'is valid with correct email typed in uppercase' do
+      expect(User.authenticate_with_credentials('JohnNyrEno@msn.com', '987654')).to_not be_nil
+    end
+
   end
 end 

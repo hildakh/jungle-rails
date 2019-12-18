@@ -1,8 +1,8 @@
 source 'https://rubygems.org'
-ruby "2.4.9"
+ruby "2.5.7"
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.2.6'
+gem 'rails', '4.2.8'
 # Use postgresql as the database for Active Record
 gem 'pg'
 # Use SCSS for stylesheets
@@ -63,5 +63,5 @@ end
 group :production do
   gem 'newrelic_rpm'
   gem 'rails_12factor'
-  # gem 'pg'
+  gem 'pg'
 end

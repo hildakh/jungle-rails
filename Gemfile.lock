@@ -239,7 +239,7 @@ DEPENDENCIES
   jquery-rails
   money-rails
   newrelic_rpm
-  pg
+  pg (~> 1.1.4)
   poltergeist
   puma
   quiet_assets

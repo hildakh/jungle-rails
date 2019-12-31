@@ -2,6 +2,10 @@
 
 A mini e-commerce application built with Rails 4.2 for purposes of teaching Rails by example.
 
+## Screenshots
+![](https://github.com/hildakh/scheduler/blob/master/docs/main.png?raw=true)
+![](https://github.com/hildakh/scheduler/blob/master/docs/bookinterview.png?raw=true)
+![](https://github.com/hildakh/scheduler/blob/master/docs/delete.png?raw=true)
 
 ## Setup
 

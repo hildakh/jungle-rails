@@ -3,10 +3,10 @@
 A mini e-commerce application built with Rails 4.2 for purposes of teaching Rails by example.
 
 ## Screenshots
-![]()
-![]()
-![]()
-![]()
+![](https://github.com/hildakh/jungle-rails/blob/master/docs/Home%20Page.png?raw=true)
+![](https://github.com/hildakh/jungle-rails/blob/master/docs/cart.png?raw=true)
+![](https://github.com/hildakh/jungle-rails/blob/master/docs/shopping%20confirmation.png?raw=true)
+![](https://github.com/hildakh/jungle-rails/blob/master/docs/sales.png?raw=true)
 
 ## Setup
 

@@ -37,7 +37,7 @@ Product.destroy_all
 
 cat1.products.create!({
   name:  'Men\'s Classy shirt',
-  description: Faker::Hipster.paragraph(4),
+  description: Faker::Hipster.paragraph(sentence_count:4),
   image: open_asset('apparel1.jpg'),
   quantity: 10,
   price: 64.99

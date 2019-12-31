@@ -3,10 +3,18 @@
 A mini e-commerce application built with Rails 4.2 for purposes of teaching Rails by example.
 
 ## Screenshots
-![Home Page](https://github.com/hildakh/jungle-rails/blob/master/docs/Home%20Page.png?raw=true)
+### Home Page
+![](https://github.com/hildakh/jungle-rails/blob/master/docs/Home%20Page.png?raw=true)
+
+### Shopping Cart
 ![](https://github.com/hildakh/jungle-rails/blob/master/docs/cart.png?raw=true)
+
+### Order Confirmation
 ![](https://github.com/hildakh/jungle-rails/blob/master/docs/shopping%20confirmation.png?raw=true)
+
+### Admin Sales Page
 ![](https://github.com/hildakh/jungle-rails/blob/master/docs/sales.png?raw=true)
+
 
 ## Setup
 
@@ -25,9 +33,3 @@ A mini e-commerce application built with Rails 4.2 for purposes of teaching Rail
 Use Credit Card # 4111 1111 1111 1111 for testing success scenarios.
 
 More information in their docs: <https://stripe.com/docs/testing#cards>
-
-## Dependencies
-
-* Rails 4.2 [Rails Guide](http://guides.rubyonrails.org/v4.2/)
-* PostgreSQL 9.x
-* Stripe

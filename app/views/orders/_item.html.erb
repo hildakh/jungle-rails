@@ -3,7 +3,7 @@
       <% @product= @products.find(@productid)%>
 <tr>
   <td>
-    <%= image_tag @product.image.tiny, class: 'main-img' %>
+    <%= image_tag @product.image.tiny.url, class: 'main-img' %>
   </td>
 
   <td>

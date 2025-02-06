@@ -132,5 +132,11 @@ cat3.products.create!({
   price: 2_483.75
 })
 
+Sale.create!({
+  name: 'Winter Sale',
+  starts_on: Date.current,
+  ends_on: Date.current + 30,
+  percent_off: 30
+})
 
 puts "DONE!"
